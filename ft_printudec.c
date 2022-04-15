@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printudec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/14 22:36:21 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/15 14:11:23 by bgenie           ###   ########.fr       */
+/*   Created: 2022/04/15 18:54:48 by bgenie            #+#    #+#             */
+/*   Updated: 2022/04/15 18:57:12 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(char *str, ...)
+size_t	ft_printudec(unsigned long nbr)
 {
-	va_list	ap;
-	size_t	count;
+	char	*anbr;
+	size_t	size;
 
-	va_start(ap, str);
-	count = 0;
-	while (*str)
-	{
-		if (*str == '%')
-		{
-			str++;
-			count += ft_parse_format(*str++, ap);		
-		}
-		else
-		{
-			write(1, str, 1);
-			count++;
-			str++;
-		}
-	}
-	va_end(ap);
-	return (count);
+	anbr = ft_itoa(nbr);
+	size = ft_strlen(anbr);
+	return (size);
 }

@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 23:16:11 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/15 00:25:00 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/15 18:59:21 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ size_t	ft_parse_format(char c, va_list ap)
 	else if (c == 'd')
 		count += (ft_printdec(va_arg(ap, int)));
 	/*else if (c == 'i')
-		count += (ft_printint(va_arg(ap, int)));
+		count += (ft_printint(va_arg(ap, int)));*/
 	else if (c == 'u')
-		count += (ft_printudec(va_arg(ap, unsigned int)));
+		count += (ft_printudec(va_arg(ap, unsigned long)));
 	else if (c == 'x' || c == 'X')
-		count += (ft_printhex(va_arg(ap, unsigned int)));
+		count += (ft_printstr(ft_ultohex(va_arg(ap, int))));
 	else if (c == '%')
-		count += (ft_printchar('%'));*/
+		count += (ft_printchar('%'));
 	va_end(ap);
 	return (count);
 }
