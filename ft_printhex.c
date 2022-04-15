@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printptr.c                                      :+:      :+:    :+:   */
+/*   ft_printhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/14 22:44:05 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/16 01:08:56 by bgenie           ###   ########.fr       */
+/*   Created: 2022/04/15 23:45:48 by bgenie            #+#    #+#             */
+/*   Updated: 2022/04/16 01:08:11 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_printptr(void *ptr)
+size_t	ft_printhex(char *hex, int upper)
 {
-	unsigned long int	addr;
-	unsigned int		word;	
-	char				*hex;
-	size_t				size;
+	int	i;
 
-	size = 0;
-	addr = (unsigned long int) ptr;
-	word = (unsigned int)(addr >> 32);
-	hex = ft_utohex(word);
-	write(1, "0x", 2);
-	size += ft_printhex(hex, 0);
-	word = (unsigned int) addr;
-	hex = ft_utohex(word);
-	size += ft_printhex(hex, 0);
-	return (size + 2);
+	i = 0;
+	while (hex[i])
+		i++;
+	while (i >= 0)
+	{
+		if (upper == 1)
+			hex[i] = ft_toupper(hex[i]);
+		write(1, &hex[i--], 1);
+	}
+	return (ft_strlen(hex));
 }

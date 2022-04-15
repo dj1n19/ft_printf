@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 22:36:21 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/15 14:11:23 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/16 00:53:15 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_printf(char *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			count += ft_parse_format(*str++, ap);		
+			count += ft_parse_format(*str++, ap);
 		}
 		else
 		{

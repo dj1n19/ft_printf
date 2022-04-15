@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 23:16:11 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/15 18:59:21 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/16 01:07:00 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 size_t	ft_parse_format(char c, va_list ap)
 {
 	size_t	count;
+	int		upper;
 
+	upper = 0;
 	count = 0;
 	if (c == 'c')
 		count += (ft_printchar(va_arg(ap, int)));
@@ -23,14 +25,16 @@ size_t	ft_parse_format(char c, va_list ap)
 		count += (ft_printstr(va_arg(ap, char *)));
 	else if (c == 'p')
 		count += (ft_printptr(va_arg(ap, void *)));
-	else if (c == 'd')
+	else if (c == 'd' || c == 'i')
 		count += (ft_printdec(va_arg(ap, int)));
-	/*else if (c == 'i')
-		count += (ft_printint(va_arg(ap, int)));*/
 	else if (c == 'u')
-		count += (ft_printudec(va_arg(ap, unsigned long)));
+		count += (ft_printudec(va_arg(ap, unsigned int)));
 	else if (c == 'x' || c == 'X')
-		count += (ft_printstr(ft_ultohex(va_arg(ap, int))));
+	{
+		if (c == 'X')
+			upper = 1;
+		count += (ft_printhex(ft_utohex(va_arg(ap, unsigned long int)), upper));
+	}
 	else if (c == '%')
 		count += (ft_printchar('%'));
 	va_end(ap);

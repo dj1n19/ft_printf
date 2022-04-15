@@ -2,27 +2,39 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_parse_format.c ft_printchar.c ft_printdec.c ft_printf.c ft_printptr.c ft_printstr.c ft_ultohex.c
+SRCS = ft_parse_format.c ft_printchar.c ft_printdec.c ft_printf.c ft_printptr.c ft_printstr.c ft_utohex.c
 
-LIB = libft/libft.a
+LIB_PATH = libft/
 
-HEADERS = ft_printf.h
+LIB = ft
+
+DEP = libft.a
+
+HEADERS_DIR = ./
 
 OBJS = $(SRCS:.c=.o)
 
 NAME = libftprintf.a
 
+.c.o:
+				$(CC) $(CFLAGS) -c -L$(LIB_PATH) -l$(LIB) -I$(HEADERS_DIR) $< -o $(<:.c=.o)
+
 all:		$(NAME)
 
-$(NAME):	$(OBJS)
-			make -C libft
-			ar -cr -L$(LIB) -lft $(NAME) $(OBJS)
-			ranlib $(NAME)
+$(DEP):
+				make -C $(LIB_PATH)
+			
+
+$(NAME):	$(DEP) $(OBJS)
+				ar -cr $(NAME) $(OBJS)
+				ranlib $(NAME)
 
 clean:
-			rm -f $(OBJS)
+				make fclean -C $(LIB_PATH)
+				rm -f $(OBJS)
 
 fclean:		clean
+				rm -f $(LIB_PATH)$(DEP)
 				rm -f $(NAME)
 
 re:			fclean all
