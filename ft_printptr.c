@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 22:44:05 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/16 01:08:56 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/19 15:45:48 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ size_t	ft_printptr(void *ptr)
 	word = (unsigned int) addr;
 	hex = ft_utohex(word);
 	size += ft_printhex(hex, 0);
+	free(hex);
 	return (size + 2);
 }

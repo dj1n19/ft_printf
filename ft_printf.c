@@ -6,13 +6,13 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 22:36:21 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/16 00:53:15 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/19 16:13:37 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
 	size_t	count;

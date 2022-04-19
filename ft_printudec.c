@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 18:54:48 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/15 23:29:12 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/19 15:47:50 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ size_t	ft_printudec(unsigned int nbr)
 	anbr = ft_utoa(nbr);
 	ft_putstr_fd(anbr, 1);
 	size = ft_strlen(anbr);
+	free(anbr);
 	return (size);
 }

@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 23:48:01 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/15 00:24:39 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/19 15:47:01 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ size_t	ft_printdec(int nbr)
 
 	anbr = ft_itoa(nbr);
 	ft_putstr_fd(anbr, 1);
+	free(anbr);
 	return (ft_strlen(anbr));
 }
