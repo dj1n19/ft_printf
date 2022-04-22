@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 23:16:11 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/16 01:07:00 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/22 21:41:18 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	ft_parse_format(char c, va_list ap)
 	{
 		if (c == 'X')
 			upper = 1;
-		count += (ft_printhex(ft_utohex(va_arg(ap, unsigned long int)), upper));
+		count += (ft_printhex(ft_utohex(va_arg(ap, unsigned long int)), upper, 0));
 	}
 	else if (c == '%')
 		count += (ft_printchar('%'));

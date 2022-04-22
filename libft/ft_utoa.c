@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 22:58:03 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/15 23:28:23 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/22 16:46:02 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char	*ft_utoa(unsigned int n)
 	anbr_begin = anbr;
 	anbr += ft_nbr_size(n);
 	*anbr-- = 0;
+	if (n == 0)
+		*anbr = 48;
 	while (n != 0)
 	{
 		*anbr-- = n % 10 + 48;
