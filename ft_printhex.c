@@ -6,13 +6,13 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 23:45:48 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/22 21:43:42 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/22 22:32:06 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_printhex(char *hex, int upper, int padding)
+size_t	ft_printhex(char *hex, int cap, int padding)
 {
 	int		i;
 	size_t	size;
@@ -28,7 +28,7 @@ size_t	ft_printhex(char *hex, int upper, int padding)
 	}
 	while (--i >= 0)
 	{
-		if (upper == 1)
+		if (cap == 1)
 			hex[i] = ft_toupper(hex[i]);
 		write(1, &hex[i], 1);
 	}

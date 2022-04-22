@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 22:44:05 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/22 22:10:50 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/22 22:33:45 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ size_t	ft_printptr(void *ptr)
 	}
 	addr = (unsigned long int) ptr;
 	write(1, "0x", 2);
-	size = ft_print32b(addr);	
+	size = ft_print32b(addr);
 	return (size + 2);
 }

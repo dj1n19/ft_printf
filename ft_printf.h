@@ -6,16 +6,16 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 22:38:08 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/22 21:40:28 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/22 22:30:21 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include "libft/libft.h"
+# include <unistd.h>
+# include <stdarg.h>
+# include <stdlib.h>
+# include "libft/libft.h"
 
 int		ft_printf(const char *str, ...);
 size_t	ft_parse_format(char c, va_list ap);
